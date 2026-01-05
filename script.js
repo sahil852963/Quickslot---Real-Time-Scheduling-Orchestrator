@@ -227,12 +227,12 @@ confirmBtn.addEventListener("click", () => {
     };
 
     state.bookings.push(payload);
+    confirmModal.hide();
 
     saveBookings(); // persist
     renderSlots(state.pendingSlot.provider.id, state.pendingSlot.date);
     renderBookings();
     sendConfirmationEmail(payload); // optional API
-    confirmModal.hide();
 });
 
 function renderBookings() {
